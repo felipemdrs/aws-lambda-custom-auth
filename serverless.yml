@@ -12,6 +12,12 @@ package:
   exclude:
     - 'node_modules/**'
     - 'package*'
+    - 'README.md'
+    - 'LICENSE'
+    - '.gitignore'
+    - 'requirements.txt'
+    - 'ci/*'
+    - '.github/**'
 
 functions:
   hello:
