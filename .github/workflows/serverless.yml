@@ -4,25 +4,21 @@ on:
   push:
     branches:
       - main
-
 jobs:
   deploy:
     name: deploy
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8]
+        node-version: [14.x]
     steps:
     - uses: actions/checkout@v3
-    - name: Use Python ${{ matrix.python-version }}
-      uses: actions/setup-python@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
       with:
-        python-version: ${{ matrix.python-version }}
+        node-version: ${{ matrix.node-version }}
     - run: npm ci
     - name: serverless deploy
       uses: serverless/github-action@v3
       with:
-        args: deploy
-      env:
-        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        args: deploy --stage devel
