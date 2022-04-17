@@ -22,6 +22,8 @@ package:
 functions:
   protected:
     handler: src/protected_handler.lambda_handler
+  authorizer:
+    handler: src/authorizer_handler.lambda_handler
   oauth:
     handler: src/oauth_handler.py
 
