@@ -8,7 +8,7 @@ provider:
   lambdaHashingVersion: '20201221'
 
 package:
-  individually: True
+  individually: true
   exclude:
     - 'node_modules/**'
     - 'package*'
@@ -20,8 +20,10 @@ package:
     - '.github/**'
 
 functions:
-  hello:
-    handler: src/handler.lambda_handler
+  protected:
+    handler: src/protected_handler.lambda_handler
+  oauth:
+    handler: src/oauth_handler.py
 
 plugins:
   - serverless-python-requirements

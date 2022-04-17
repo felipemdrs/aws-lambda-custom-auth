@@ -40,9 +40,9 @@ resource "aws_api_gateway_integration" "hello_get" {
 # API deploy
 
 resource "aws_api_gateway_deployment" "api" {
-  rest_api_id       = aws_api_gateway_rest_api.api.id
   # Change on each terrafor apply to trigger stage deploy
   stage_description = timestamp()
+  rest_api_id       = aws_api_gateway_rest_api.api.id
 
   lifecycle {
     create_before_destroy = true
