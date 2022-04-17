@@ -10,7 +10,7 @@ resource "aws_api_gateway_resource" "auth" {
   rest_api_id = aws_api_gateway_rest_api.api.id
 }
 
-# Hello
+# Hello resource
 
 resource "aws_api_gateway_resource" "hello" {
   parent_id   = aws_api_gateway_resource.auth.id
@@ -25,11 +25,13 @@ resource "aws_api_gateway_method" "hello_get" {
   rest_api_id   = aws_api_gateway_rest_api.api.id
 }
 
+# API "hello get" integration with lambda function
 resource "aws_api_gateway_integration" "hello_get" {
   http_method = aws_api_gateway_method.hello_get.http_method
   resource_id = aws_api_gateway_resource.hello.id
   rest_api_id = aws_api_gateway_rest_api.api.id
 
+  # Internal integration always POST
   integration_http_method = "POST"
   type                    = "AWS_PROXY"
   uri                     = data.aws_lambda_function.auth_lambda.invoke_arn
@@ -39,6 +41,7 @@ resource "aws_api_gateway_integration" "hello_get" {
 
 resource "aws_api_gateway_deployment" "api" {
   rest_api_id       = aws_api_gateway_rest_api.api.id
+  # Change on each terrafor apply to trigger stage deploy
   stage_description = timestamp()
 
   lifecycle {
