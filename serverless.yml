@@ -15,7 +15,7 @@ package:
 
 functions:
   hello:
-    handler: src/handler.hello
+    handler: src/handler.lambda_handler
 
 plugins:
   - serverless-python-requirements
