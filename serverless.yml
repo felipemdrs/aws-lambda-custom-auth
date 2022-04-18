@@ -25,7 +25,7 @@ functions:
   authorizer:
     handler: src/authorizer_handler.lambda_handler
   oauth:
-    handler: src/oauth_handler.py
+    handler: src/oauth_handler.lambda_handler
 
 plugins:
   - serverless-python-requirements

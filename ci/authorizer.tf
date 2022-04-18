@@ -1,5 +1,5 @@
 resource "aws_api_gateway_authorizer" "aws_lambda_auth" {
-  name        = "aws_lambda_auth_authorizer"
+  name        = "aws_lambda_custom_auth_authorizer"
   rest_api_id = aws_api_gateway_rest_api.api.id
 
   authorizer_result_ttl_in_seconds = 10
