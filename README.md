@@ -1,1 +1,1 @@
-# aws-lambda-auth
+# aws-lambda-custom-auth

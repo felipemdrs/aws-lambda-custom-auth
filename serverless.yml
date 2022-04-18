@@ -1,4 +1,4 @@
-service: aws-lambda-auth
+service: aws-lambda-custom-auth
 
 frameworkVersion: '3'
 

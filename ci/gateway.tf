@@ -1,5 +1,5 @@
 resource "aws_api_gateway_rest_api" "api" {
-  name = "aws-lambda-auth"
+  name = "aws-lambda-custom-auth"
 }
 
 # Main path setup
