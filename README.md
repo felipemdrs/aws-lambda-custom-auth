@@ -14,7 +14,7 @@ Used to manage terraform state. https://app.terraform.io/
 After create your terraform cloud account and started new workspace. Same variables must be created to apply changes
 
 
-`AWS_SECRET_ACCESS_KEY` and `AWS_SECRET_ACCESS_KEY`. Both generated in AWS IAM with programmatically access mode
+`AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`. Both generated in AWS IAM with programmatically access mode
 
 ## Github Actions
 
