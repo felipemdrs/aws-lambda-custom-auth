@@ -1,7 +1,7 @@
 # aws-lambda-custom-auth
 
 This project uses a combination of serverless and terraform to create a simple api thats generate
-bearer token, validate and get simple data on protected route.
+bearer token, validate and get simple data in a protected route.
 
 Continuos integrations has developed using Github actions. More detalis in `.github/worflows` folder.
 
